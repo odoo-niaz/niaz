@@ -35,7 +35,7 @@ export default function Home() {
     const phpIcon = "/images/php.png";
     const htmlIcon = "/images/html.png";
     const cssIcon = "/images/css.png";
-    const pythonIcon = "/images/python.png";
+    const pythonIcon = "niaz/images/python.png";
     const postgresqlIcon = "/images/postgresql.png";
     const xmlIcon = "/images/xml.png";
     const dockerIcon = "/images/docker.png";
