@@ -387,12 +387,12 @@ const Sidebar = () => {
                             </div>
                         </a></li>
 
-                    <li className={`${pathname === "/blog/" ? 'rounded-3 bg1-color' : 'false'}`}>
+                    <li className={`${pathname === "/testimonials/" ? 'rounded-3 bg1-color' : 'false'}`}>
                         <a
                             className="d-flex justify-content-between align-items-center"
-                            href={`${basePath}/blog`}>
+                            href={`${basePath}/testimonials`}>
                             <div
-                                className={`d-flex align-items-center gap-2 fs-eight p-2 ${pathname === "/blog/" ? 'n11-color' : 'n5-color'}`}>
+                                className={`d-flex align-items-center gap-2 fs-eight p-2 ${pathname === "/testimonials/" ? 'n11-color' : 'n5-color'}`}>
                                 <span
                                     className="fs-five d-flex align-items-center justify-content-center">
 
