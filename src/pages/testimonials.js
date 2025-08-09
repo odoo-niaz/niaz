@@ -9,162 +9,111 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import {Autoplay, Navigation, Pagination} from "swiper/modules";
 import {withBasePath} from "@/utils/basePath";
 
-export const TESTIMONIALS = [{
-    id: 1, name: "How to Inject JavaScript Directly into an Odoo XML Template", location: "UK", text: `In Odoo development, XML templates are the backbone for rendering views, dialogs, and UI components.  
-While QWeb templates are primarily designed for HTML structure and Odoo widgets, there are times when you need to inject custom JavaScript directly inside an XML template — for example, to manipulate DOM elements or tweak UI behavior.  
-In this article, we’ll explore how to embed JavaScript into an Odoo XML template and run it when the page is loaded.  
+export default function Testimonials() {
 
-However, for small UI tweaks or one-off scripts, inline JavaScript can be a quick and effective solution.  
-While the best practice is to write JavaScript in static/src/js modules, inline scripts inside XML templates can be useful for small, targeted changes.`,
+    return (
 
-    extraCode: `Example 1: Adjusting Modal Size 
-<odoo>
-  <template id="custom_modal_script" inherit_id="web.modal" name="Custom Modal Size">
-    <xpath expr="//body" position="inside">
-      <script>
-        $(document).ready(function () {
-          $('.modal-dialog').css({ 'max-width': '550px' });
-          $('.modal-content').css({ 'max-height': '100%' });
-        });
-      </script>
-    </xpath>
-  </template>
-</odoo>
+        <>
+            <Head>
+                <meta charSet="utf-8"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <title>Niaz</title>
+                <link rel="icon" href="favicon.ico" type="image/x-icon" sizes="11x15"/>
+                <meta name="next-size-adjust"/>
+            </Head>
 
-Example 2 – Highlight Rows in a Tree/List View  
-Sometimes you want to make certain rows stand out based on values.
-<odoo>
-  <template id="highlight_tree_rows" inherit_id="web.webclient_bootstrap" name="Highlight Rows">
-    <xpath expr="//body" position="inside">
-      <script>
-        $(document).ready(function () {
-          $("tr:contains('High Priority')").css("background-color", "#ffe5e5");
-        });
-      </script>
-    </xpath>
-  </template>
-</odoo>
+            <div className="main-content w-100">
+                <main>
+                    <div className="overflow-hidden">
+                        <section className="pt-120 pb-120 br-bottom-n3 mt-10 mt-lg-0">
+                            <div className="container">
+                                <div>
+                                    <div
+                                        className="d-flex gap-3 flex-wrap flex-xxl-nowrap justify-content-between align-items-end mb-8 mb-md-15">
+                                        <div className="section-heading">
+                                            <div className="d-flex align-items-center gap-2">
+                                                <div className="title-line"></div>
+                                                <h2 className="display-four n5-color fw-semibold">Articles</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-Example 3 – Auto-Fill a Form Field  
-If you want to set a default value in a form when it loads:
-<odoo>
-  <template id="autofill_form_field" inherit_id="web.webclient_bootstrap" name="Auto Fill Field">
-    <xpath expr="//body" position="inside">
-      <script>
-        $(document).ready(function () {
-          $("input[name='x_custom_field']").val("Pre-filled Value");
-        });
-      </script>
-    </xpath>
-  </template>
-</odoo>
 
-Example 4 – Show an Alert on Page Load  
-A simple way to notify users of something important:
-<odoo>
-  <template id="alert_on_load" inherit_id="web.webclient_bootstrap" name="Alert Message">
-    <xpath expr="//body" position="inside">
-      <script>
-        $(document).ready(function () {
-          alert("Please review the latest policy updates before proceeding.");
-        });
-      </script>
-    </xpath>
-  </template>
-</odoo>
+                                {/*            <div className="mt-8 mt-md-15 overflow-x-hidden">*/}
+                                {/*                {TESTIMONIALS.filter(t => t.article === true).map((testimonial, idx) => (<div*/}
+                                {/*                    key={idx}*/}
+                                {/*                    className="px-5 px-md-8 py-3 py-md-5 mb-8 bgn2-color box-shadow1 br-left-p1 position-relative mx-2 mx-md-4"*/}
+                                {/*                >*/}
+                                {/*                    <div className="d-flex gap-3 align-items-center mt-3 mt-md-5">*/}
+                                {/*                        <div>*/}
+                                {/*                <span style={{fontSize: '1.4rem'}} className="d-block n5-color">*/}
+                                {/*    {testimonial?.name}*/}
+                                {/*</span>*/}
+                                {/*                            <Link*/}
+                                {/*                                href={`/testimonials/${testimonial.id}`}*/}
+                                {/*                                style={{*/}
+                                {/*                                    fontSize: '1.1rem', color: '#0d6efd', cursor: 'pointer'*/}
+                                {/*                                }}*/}
+                                {/*                                className="d-block"*/}
+                                {/*                            >*/}
+                                {/*                                Read more →*/}
+                                {/*                            </Link>*/}
+                                {/*                        </div>*/}
+                                {/*                    </div>*/}
+                                {/*                </div>))}*/}
+                                {/*            </div>*/}
 
-Example 5 – Toggle Visibility of an Element  
-Hide/show an element when a button is clicked:
-<odoo>
-  <template id="toggle_visibility_script" inherit_id="web.webclient_bootstrap" name="Toggle Visibility">
-    <xpath expr="//body" position="inside">
-      <script>
-        $(document).ready(function () {
-          $("#my-toggle-btn").click(function () {
-            $("#my-target-div").toggle();
-          });
-        });
-      </script>
-    </xpath>
-  </template>
-</odoo>`, text3: `
-Best Practices:
-• Keep inline scripts small — move big logic to a .js file.
-• Test on mobile — DOM tweaks might break responsive layouts.
-• Use unique selectors — to avoid changing unintended elements.
-• Avoid loading twice — wrap code in $(document).ready() to prevent duplicate execution.
-`,
 
-    isImage: false, isVideo: false, article: true,
-},
+                                <div className="mt-8 mt-md-15 overflow-x-hidden">
+                                    {TESTIMONIALS.filter(t => t.article === true).map((testimonial, idx) => (
+                                        <div
+                                            key={idx}
+                                            className="px-5 px-md-8 py-3 py-md-5 mb-8 bgn2-color box-shadow1 br-left-p1 position-relative mx-2 mx-md-4"
+                                        >
+                                            {/* Conditional badge: Paid or Free */}
+                                            <span
+                                                className={`position-absolute top-0 end-0 px-2 py-1 rounded-start fs-ten ${
+                                                    testimonial.paid ? 'bg-success text-white' : 'bg-warning text-dark'
+                                                }`}
+                                                style={{fontSize: '0.75rem'}}
+                                            >
+        {testimonial.paid ? 'Paid Article' : 'Free Article'}
+      </span>
 
-{
-        id: 2,
-        name: "Ramla Hassan",
-        location: "Australia",
-        text: "I've had the chance to work closely with Umer during the development of portals for Safr Care... One of the smartest developers I've met! I highly recommend him.",
-        image: "/images/screenshot/ramla.png",
-        isImage: true,
-        isVideo: false,
-        video: "",
-        article: false
-    }, {
-        id: 3,
-        name: "Tripsholi",
-        location: "Spain",
-        text: "Umer is skilled, reliable, and always focused on getting the job done right. His attention to detail and code quality are impressive. Highly recommended.",
-        image: "/images/screenshot/tripsholi.png",
-        isImage: true,
-        isVideo: false,
-        video: "",
-        article: false
-    }, {
-        name: "Ahmed Burkhi",
-        location: "Germany",
-        text: "If you are looking for a website job done. Umer A. is your person to work with. Great knowledge with good skill in design and a professional in coding. Highly recommended.",
-        image: "/images/screenshot/ahmed.png",
-        isImage: true,
-        isVideo: false,
-        video: "",
-        article: false
-    }, {
-        name: "Jawad Sadiq",
-        location: "Bahrain",
-        text: "Umer's expertise and work ethic were outstanding. It would be a privilege to work with him again, and I would highly recommend them for any Vue.js development projects.",
-        image: "/images/screenshot/jawad.png",
-        isImage: true,
-        isVideo: false,
-        video: "",
-        article: false
-    }, {
-        name: "Mohammad Ashoor",
-        location: "Dubai, UAE",
-        text: "Umer performed an excellent job developing the required website. The communication was excellent, and the talents were exceptional. We will collaborate with Umer on any future ventures.",
-        image: "/images/screenshot/ashoor.png",
-        isImage: true,
-        isVideo: false,
-        video: "",
-        article: false
-    }, {
-        name: "Itzone Graz",
-        location: "Austria",
-        text: "Umer understood our needs quickly and delivered results ahead of time. We truly appreciated his clarity and efficiency, would absolutely work with him again.",
-        image: "/images/screenshot/zone.png",
-        isImage: true,
-        isVideo: true,
-        video: "/images/arthur-testimonial.mp4"
+                                            <div className="d-flex gap-3 align-items-center mt-3 mt-md-5">
+                                                <div>
+          <span style={{fontSize: '1.4rem'}} className="d-block n5-color">
+            {testimonial?.name}
+          </span>
+                                                    <Link
+                                                        href={`/testimonials/${testimonial.id}`}
+                                                        style={{
+                                                            fontSize: '1.1rem',
+                                                            color: '#0d6efd',
+                                                            cursor: 'pointer',
+                                                        }}
+                                                        className="d-block"
+                                                    >
+                                                        Read more →
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
 
-    }, {
-        name: "Itzone Graz",
-        location: "Austria",
-        text: "Umer understood our needs quickly and delivered results ahead of time. We truly appreciated his clarity and efficiency, would absolutely work with him again.",
-        image: "/images/screenshot/zone.png",
-        isImage: true,
-        isVideo: true,
-        video: "/images/arthur-testimonial.mp4"
 
-    },
+                            </div>
 
-];
+                        </section>
+                    </div>
+                </main>
+            </div>
 
+        </>
+
+    );
+
+}
 
