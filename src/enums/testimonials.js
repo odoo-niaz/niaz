@@ -87,8 +87,68 @@ Best Practices:
     isImage: false, isVideo: false, article: true,
 },
 
-{
-        id: 2,
+    {
+        id: 2, name: "How to Interact with Odoo Shell if the UI is Blocked", text: `Sometimes, the Odoo web interface can become inaccessible — due to heavy server load, broken modules, or other issues.
+In such cases, you can still interact with your Odoo database directly via the Odoo shell, a powerful command-line environment.
+Accessing Odoo Shell
+You can open the shell by running:`, code: `python3 ./odoo-bin shell -c odoo.conf -d odoo
+
+-c odoo.conf → Points to your Odoo configuration file.
+-d odoo → Specifies the database you want to connect to.`, image: "", text2: ``,
+
+        extraCode: `Common Odoo Shell Commands
+Once inside the shell, you can execute Python code with full access to Odoo models.
+1. Uninstall a Module
+self.env['ir.module.module'].search([('name', '=', 'module_name')]).button_immediate_uninstall()
+
+2. Install a Module
+self.env['ir.module.module'].search([('name', '=', 'module_name')]).button_immediate_install()
+
+3. Update a Module
+self.env['ir.module.module'].search([('name', '=', 'module_name')]).button_immediate_upgrade()
+
+4. Activate Developer Mode
+self.env['ir.config_parameter'].set_param('base.setup.dev_mode', 'True')
+
+5. Reset a User Password
+user = self.env['res.users'].search([('login', '=', 'admin')], limit=1)
+user.write({'password': 'new_password'})
+
+6. Force Recompute Fields
+records = self.env['model.name'].search([])
+records._compute_field_name()
+
+7. Run a Specific Cron Job
+cron = self.env.ref('module_name.ir_cron_id')
+cron.method_direct_trigger()
+
+8. Change a System Parameter
+self.env['ir.config_parameter'].set_param('web.base.url', 'https://newdomain.com')
+
+9. Find & Delete Problematic Records
+self.env['model.name'].search([('field_name', '=', 'value')]).unlink()
+
+10. Check Installed Modules
+modules = self.env['ir.module.module'].search([('state', '=', 'installed')])
+print(modules.mapped('name'))`, text3: `Pro Tips
+- Always take a database backup before making destructive changes.
+- You can run multi-line scripts directly in Odoo shell for complex fixes.
+- If the shell is not available, you can use odoo shell with --dev=all to have more debug tools loaded.`, isImage: false, isVideo: false, article: true,
+    },
+    {
+        id: 3, name: "Running Background Tasks Without Freezing the Odoo Loading Page",
+        text: `One of the common frustrations for Odoo developers is the UI freezing problem when executing heavy or time-consuming Python code inside a controller or button click action.By default, when a user triggers a server-side action in Odoo (for example, generating a large report, processing thousands of records, or syncing external APIs), the HTTP request is kept open until the function finishes.`,
+        code: `This means:
+- The user sees the loading spinner for a long time.
+- They cannot navigate to another page until the process finishes.
+- In some cases, the browser even times out.`, image: "", text2: ``,
+
+        extraCode:'', text3: `Odoo runs on a single-threaded request model per worker. When a function is running, it occupies the worker until it completes, blocking other actions for that user session. If you try to perform heavy processing in that same request, the UI will remain “stuck” waiting for the server to respond.`,
+        isImage: false, isVideo: false, article: true,
+                paid: true,
+
+    }, {
+        id: 4,
         name: "Ramla Hassan",
         location: "Australia",
         text: "I've had the chance to work closely with Umer during the development of portals for Safr Care... One of the smartest developers I've met! I highly recommend him.",
@@ -98,7 +158,7 @@ Best Practices:
         video: "",
         article: false
     }, {
-        id: 3,
+        id: 5,
         name: "Tripsholi",
         location: "Spain",
         text: "Umer is skilled, reliable, and always focused on getting the job done right. His attention to detail and code quality are impressive. Highly recommended.",
