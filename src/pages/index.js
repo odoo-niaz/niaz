@@ -172,7 +172,7 @@ export default function Home() {
                                         <div className="line"></div>
                                         <span className="n5-color">Years of Experience</span></div>
                                     <div className="d-flex align-items-center gap-2 gap-xl-4"><h2
-                                        className="display-two fw-semibold p1-color"><span>60</span></h2>
+                                        className="display-two fw-semibold p1-color"><span>40</span></h2>
                                         <div className="line"></div>
                                         <span className="n5-color">More than Projects Completed</span></div>
                                     <div className="d-flex align-items-center gap-2 gap-xl-4"><h2
