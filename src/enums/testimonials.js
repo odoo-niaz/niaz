@@ -152,7 +152,7 @@ print(modules.mapped('name'))`, text3: `Pro Tips
         name: "Sharukh",
         location: "Australia",
         text: "I've had the chance to work closely with Umer during the development of portals for Safr Care... One of the smartest developers I've met! I highly recommend him.",
-        image: "/images/image_projects/srk.png",
+        image: "/images/screenshot/srk.png",
         isImage: true,
         isVideo: false,
         video: "",
