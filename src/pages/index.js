@@ -850,44 +850,43 @@ export default function Home() {
                                         </div>
                                         <Link
                                             className="p-btn bg1-color fw-medium n11-color px-3 px-md-6 py-2 py-md-4 rounded-pill d-flex align-items-center gap-2 h-100 text-nowrap"
-                                            href="/testimonials">
+                                            href="https://www.linkedin.com/in/niaz-ahmed-raza-a587a7196/"
+                                            target="_blank">
                                             <svg stroke="currentColor" fill="currentColor" strokeWidth="0"
                                                  viewBox="0 0 256 256" height="1em" width="1em"
                                                  xmlns="http://www.w3.org/2000/svg">
                                                 <path
                                                     d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
                                             </svg>
-                                            View Screenshots
+                                            View on Linkedin
                                         </Link>
                                     </div>
                                 </div>
 
                                 <div className="mt-8 mt-md-15 overflow-x-hidden">
                                     <Swiper
-        modules={[Pagination, Navigation, Autoplay]}
-        navigation
-        pagination={{ clickable: true }}
-        spaceBetween={30}
-        slidesPerView={1}
-        autoplay={{
-            delay: 1000,
-            disableOnInteraction: true,
-        }}
-    >
-        {TESTIMONIALS.filter(t => t.article === false).map((testimonial, idx) => (
-            <SwiperSlide key={idx}>
-                <div className="px-5 px-md-10 py-6 py-md-12 bgn2-color box-shadow1 br-left-p1 position-relative mx-2 mx-md-4">
-                    <p className="n4-color fs-six">{testimonial?.text}</p>
-                    <div className="d-flex gap-3 align-items-center mt-4 mt-md-7">
-                        <div>
-                            <span className="fs-eight d-block n5-color">{testimonial?.name}</span>
-                            <span className="fs-nine d-block n5-color">{testimonial?.location}</span>
-                        </div>
-                    </div>
-                </div>
-            </SwiperSlide>
-        ))}
-    </Swiper>
+                                        modules={[Pagination, Navigation, Autoplay]}
+                                        navigation
+                                        pagination={{clickable: true}}
+                                        spaceBetween={30}
+                                        slidesPerView={1}
+                                        autoplay={{
+                                            delay: 1000, disableOnInteraction: true,
+                                        }}
+                                    >
+                                        {TESTIMONIALS.filter(t => t.article === false).map((testimonial, idx) => (
+                                            <SwiperSlide key={idx}>
+                                                <div
+                                                    className="px-5 px-md-10 py-6 py-md-12 bgn2-color box-shadow1 br-left-p1 position-relative mx-2 mx-md-4">
+                                                    <img
+                                                        src={testimonial?.image}
+                                                        alt={`Testimonial ${idx}`}
+                                                        className="img-fluid"
+                                                    />
+                                                </div>
+
+                                            </SwiperSlide>))}
+                                    </Swiper>
 
 
                                     <Swiper
