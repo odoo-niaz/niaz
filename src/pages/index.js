@@ -72,14 +72,14 @@ export default function Home() {
                 <meta property="og:title" content="Niaz Ahmed Raza - Software Engineer Odoo"/>
                 <meta property="og:description"
                       content="Showcasing modern web and mobile development projects, with client testimonials from across the globe."/>
-                <meta property="og:image" content="https://umeraslamraza.github.io/umer/images/user-side.jpg"/>
+                <meta property="og:image" content="https://odoo-niaz.github.io/niaz/images/user-side.jpg"/>
                 <meta property="og:type" content="website"/>
-                <meta property="og:url" content="https://umeraslamraza.github.io/umer/"/>
+                <meta property="og:url" content="https://odoo-niaz.github.io/niaz/"/>
 
                 <meta name="twitter:card" content="summary_large_image"/>
                 <meta name="twitter:title" content="Niaz Ahmed Raza - Software Engineer Odoo"/>
                 <meta name="twitter:description" content="Explore projects, testimonials, and contact details."/>
-                <meta name="twitter:image" content="https://umeraslamraza.github.io/umer/images/user-side.jpg"/>
+                <meta name="twitter:image" content="https://odoo-niaz.github.io/niaz/images/user-side.jpg"/>
 
             </Head>
 
